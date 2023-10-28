@@ -5,13 +5,13 @@ test:
   stage: test
   image: python:latest
   script:
-    - adduser --disabled-password --gecos "" user
-    - su --login user
-    - pip install --user poetry
-    - export PATH="$HOME/.local/bin:$PATH"
-    - poetry install
     - poetry run pytest --doctest-modules rule_one.py test_rule_one.py
 
 # Enable caching of Poetry dependencies.
 before_script:
+  - adduser --disabled-password --gecos "" user
+  - pip install --user poetry
+  - su --login user
+  - export PATH="$HOME/.local/bin:$PATH"
   - poetry config virtualenvs.in-project true
+  - poetry install
