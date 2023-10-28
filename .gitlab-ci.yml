@@ -15,8 +15,6 @@ before_script:
   - export PATH="$HOME/.local/bin:$PATH"
   - curl -sSL https://install.python-poetry.org | python3 -
   - poetry config virtualenvs.in-project true
-  # Fix error with building numpy.
-  - poetry config experimental.new-installer false
   - poetry install
 
 cache:
