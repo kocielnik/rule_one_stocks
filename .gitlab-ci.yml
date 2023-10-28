@@ -6,10 +6,11 @@ test:
   image: python:latest
   script:
     - adduser --disabled-password --gecos "" user
-    - su user -c "pip install --user poetry"
-    - export PATH="/home/user/.local/bin:$PATH"
-    - su user -c "poetry install"
-    - su user -c "poetry run pytest --doctest-modules rule_one.py test_rule_one.py"
+    - su --login user
+    - pip install --user poetry
+    - export PATH="$HOME/.local/bin:$PATH"
+    - poetry install
+    - poetry run pytest --doctest-modules rule_one.py test_rule_one.py
 
 # Enable caching of Poetry dependencies.
 before_script:
