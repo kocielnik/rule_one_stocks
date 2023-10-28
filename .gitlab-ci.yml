@@ -8,3 +8,12 @@ test:
     - adduser --disabled-password --gecos "" user
     - su user -c "pip install --user poetry"
     - PATH="/home/user/.local/bin:$PATH" su user -c "poetry run pytest --doctest-modules rule_one.py test_rule_one.py"
+
+# Enable caching of Poetry dependencies.
+
+before_script:
+  - poetry config virtualenvs.in-project true
+
+cache:
+  paths:
+    - .venv
