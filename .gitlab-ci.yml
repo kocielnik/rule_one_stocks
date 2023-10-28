@@ -7,4 +7,4 @@ test:
   script:
     - adduser --disabled-password --gecos "" user
     - su user -c "pip install --user poetry"
-    - PATH="$HOME/.local/bin:$PATH" su user -c "poetry run pytest --doctest-modules rule_one.py test_rule_one.py"
+    - su user -c "$HOME/.local/bin/poetry run pytest --doctest-modules rule_one.py test_rule_one.py"
