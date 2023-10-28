@@ -15,7 +15,3 @@ test:
 # Enable caching of Poetry dependencies.
 before_script:
   - poetry config virtualenvs.in-project true
-
-cache:
-  paths:
-    - .venv
