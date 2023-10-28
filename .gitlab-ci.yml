@@ -10,8 +10,8 @@ test:
 # Enable caching of Poetry dependencies.
 before_script:
   - adduser --disabled-password --gecos "" user
-  - pip install --user poetry
   - su --login user
+  - curl -sSL https://install.python-poetry.org | python3 -
   - export PATH="$HOME/.local/bin:$PATH"
   - poetry config virtualenvs.in-project true
   - poetry install
