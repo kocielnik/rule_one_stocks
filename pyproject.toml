@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "rule_one_stocks"
+name = "rule_one"
 version = "0.1.0"
 description = "Rule #1 Stocks"
 authors = ["Patryk Kocielnik <patryk@kocielnik.pl>"]

@@ -1,4 +1,4 @@
-from rule_one_stocks import Company, Deal, MockTicker
+from rule_one import Company, Deal, MockTicker
 
 
 def test_get_deals():
